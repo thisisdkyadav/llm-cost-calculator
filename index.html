@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Cost Calculator | Precision AI Pricing Tool</title>
+    <meta name="description" content="Calculate your LLM API costs easily. Input token pricing and usage to get instant accurate total costs for any AI model.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1 class="title">LLM <span class="text-gradient">Cost Calculator</span></h1>
+            <p class="subtitle">Calculate your AI expenses with precision and ease.</p>
+        </header>
+
+        <section class="calculator-card glass">
+            <div class="input-grid">
+                <!-- Pricing Section -->
+                <div class="input-group-container">
+                    <h2 class="section-label">Model Pricing <small>(per 1M tokens)</small></h2>
+                    <div class="input-field">
+                        <label for="inputCostPerM">Input Price (USD)</label>
+                        <div class="input-wrapper">
+                            <span class="prefix">$</span>
+                            <input type="number" id="inputCostPerM" placeholder="0.00" step="0.01" value="0.15">
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <label for="outputCostPerM">Output Price (USD)</label>
+                        <div class="input-wrapper">
+                            <span class="prefix">$</span>
+                            <input type="number" id="outputCostPerM" placeholder="0.00" step="0.01" value="0.60">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usage Section -->
+                <div class="input-group-container border-left">
+                    <h2 class="section-label">Token Usage</h2>
+                    <div class="input-field">
+                        <label for="inputTokens">Input Tokens</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="inputTokens" placeholder="0" step="100" value="1000">
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <label for="outputTokens">Output Tokens</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="outputTokens" placeholder="0" step="100" value="500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <div class="divider"></div>
+                <div class="result-display">
+                    <div class="result-item">
+                        <span class="result-label">Total Cost</span>
+                        <span id="totalCost" class="result-value text-gradient">$0.000450</span>
+                    </div>
+                </div>
+                
+                <div class="breakdown-grid">
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Input Cost</span>
+                        <span id="inputCostResult" class="breakdown-value">$0.000150</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Output Cost</span>
+                        <span id="outputCostResult" class="breakdown-value">$0.000300</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 LLM Cost Calculator. Built for developers.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
