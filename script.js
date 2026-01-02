@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalCostDisplay = document.getElementById('totalCost');
     const inputCostResult = document.getElementById('inputCostResult');
     const outputCostResult = document.getElementById('outputCostResult');
+    const requestsPerDollarDisplay = document.getElementById('requestsPerDollar');
 
     function calculate() {
         // Parse values
@@ -22,11 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const outputOverallCost = (outTokens / 1000000) * outCostPerM;
         const totalOverallCost = inputOverallCost + outputOverallCost;
 
+        // Calculate requests per dollar
+        const requestsPerDollar = totalOverallCost > 0 ? 1 / totalOverallCost : 0;
+
         // Format and update UI
-        updateUI(totalOverallCost, inputOverallCost, outputOverallCost);
+        updateUI(totalOverallCost, inputOverallCost, outputOverallCost, requestsPerDollar);
     }
 
-    function updateUI(total, input, output) {
+    function updateUI(total, input, output, rpd) {
         // Determine precision based on value size
         const formatOptions = (val) => {
             if (val === 0) return '$0.00';
@@ -37,6 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
         totalCostDisplay.textContent = formatOptions(total);
         inputCostResult.textContent = formatOptions(input);
         outputCostResult.textContent = formatOptions(output);
+        
+        requestsPerDollarDisplay.textContent = rpd > 0 
+            ? Math.floor(rpd).toLocaleString() 
+            : '0';
 
         // Add a subtle "pulse" animation to the total cost on change
         totalCostDisplay.style.animation = 'none';

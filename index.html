@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="background-blobs">
         <div class="blob blob-1"></div>
@@ -20,7 +22,7 @@
     <main class="container">
         <header class="header">
             <h1 class="title">LLM <span class="text-gradient">Cost Calculator</span></h1>
-            <p class="subtitle">Calculate your AI expenses with precision and ease.</p>
+            <p class="subtitle">Calculate your AI expenses with precision.</p>
         </header>
 
         <section class="calculator-card glass">
@@ -64,13 +66,17 @@
 
             <div class="result-section">
                 <div class="divider"></div>
-                <div class="result-display">
+                <div class="result-grid-main">
                     <div class="result-item">
                         <span class="result-label">Total Cost</span>
                         <span id="totalCost" class="result-value text-gradient">$0.000450</span>
                     </div>
+                    <div class="result-item">
+                        <span class="result-label">Requests per $1</span>
+                        <span id="requestsPerDollar" class="result-value rpd-value">2,222</span>
+                    </div>
                 </div>
-                
+
                 <div class="breakdown-grid">
                     <div class="breakdown-item">
                         <span class="breakdown-label">Input Cost</span>
@@ -91,4 +97,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
